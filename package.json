@@ -6,7 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "mocha",
-    "coverage": "nyc --reporter=lcov npm test"
+    "cov": "c8 mocha",
+    "rep": "c8 report --reporter=lcov",
+    "mocha": "_mocha -b -R spec",
+    "test1": "nyc report --reporter=text-lcov --reporter=lcov",
+    "coverage": "nyc npm run mocha && shx cat ./coverage/lcov.info | node ./bin/coveralls.js --verbose"
   },
   "author": "",
   "license": "MIT",
@@ -14,7 +18,8 @@
     "c8": "^7.12.0",
     "chai": "^4.3.7",
     "istanbul": "^0.4.5",
-    "mocha": "^10.1.0"
+    "mocha": "^10.1.0",
+    "shx": "^0.3.4"
   },
   "devDependencies": {
     "coveralls": "^3.1.1",

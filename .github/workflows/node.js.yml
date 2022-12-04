@@ -26,7 +26,8 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm test
-    - run: npm run coverage
+    - run: npm run cov
+    - run: npm run rep
     - uses: coverallsapp/github-action@master
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS }}
