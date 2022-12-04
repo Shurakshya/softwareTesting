@@ -33,7 +33,7 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
-        path: mochawesome-report/mochawesome.html
+        path: mochawesome-report
 
     - uses: coverallsapp/github-action@master
       env:
