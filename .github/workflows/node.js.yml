@@ -19,23 +19,30 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm test
-    - run: npm run cov
-    - run: npm run rep
 
+    - name: Install dependencies
+      run: npm ci
+    - name: Run test
+      run: npm test
+    - name: Run coverage
+      run: npm run coverage
+    - name: Make report 
+      run: npm run report
+      
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
         path: mochawesome-report
 
-    - uses: coverallsapp/github-action@master
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS }}
       with:

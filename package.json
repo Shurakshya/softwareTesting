@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha --reporter mochawesome",
-    "cov": "c8 mocha",
-    "rep": "c8 report --reporter=lcov"
+    "coverage": "c8 mocha",
+    "report": "c8 report --reporter=lcov"
   },
   "author": "",
   "license": "MIT",
