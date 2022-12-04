@@ -28,6 +28,13 @@ jobs:
     - run: npm test
     - run: npm run cov
     - run: npm run rep
+
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v3
+        with:
+          name: code-coverage-report
+          path: mochawesome-report/mochawesome.html
+
     - uses: coverallsapp/github-action@master
       env:
         COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS }}
