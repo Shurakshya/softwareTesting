@@ -29,7 +29,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
     - name: Run test
-      run: npm test --silent
+      run: npm run --silent test 
     - name: Run coverage
       run: npm run coverage
     - name: Make report 
