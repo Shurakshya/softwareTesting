@@ -18,9 +18,14 @@ describe("isEmpty.js Testing", () => {
     expect(isEmpty(1)).to.deep.equal(true)
   })
 
-  it("returns false when value is array", () => {
+  it("returns true when value is empty object", () => {
+    expect(isEmpty({})).to.deep.equal(true)
+  })
+
+  it("returns false when value is array or buffer", () => {
     const valueToTest= [1,2,3];
     expect(isEmpty(valueToTest)).to.deep.equal(false)
+    expect(isEmpty(new Buffer(2))).to.equal(false);
   })
 
   it("returns false when value is string", () => {
