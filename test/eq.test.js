@@ -15,11 +15,18 @@ describe("eq.js Testing", () => {
     expect(eq(NaN, NaN)).to.deep.equal(true)
   })
 
+  it("returns true when two objects are same", () => {
+    const equalValue = {'user': 'test'};
+    expect(eq(value, equalValue)).to.deep.equal(true)
+  })
+
   it("returns false when both values are not equal", () => {
     expect(eq(value, compareValue)).to.equal(false);
   })
 
-  it("returns false when one value is object and other is string", () => {
-    expect(eq(value, 1)).to.deep.equal(false)
+  it("returns false when one value is object and other is not", () => {
+    expect(eq(value, 'abc')).to.deep.equal(false)
   })
+
+  
 });
