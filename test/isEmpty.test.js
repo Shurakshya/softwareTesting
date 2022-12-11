@@ -32,4 +32,13 @@ describe("isEmpty.js Testing", () => {
     const valueToTest= {'user': 'test'}
     expect(isEmpty(valueToTest)).to.deep.equal(false)
   })
+
+  it("returns false when value is map", () => {
+    const valueToTest= new Map([
+      ["apples", 500],
+      ["bananas", 300],
+      ["oranges", 200]
+    ]);
+    expect(isEmpty(valueToTest)).to.deep.equal(false)
+  })
 });
