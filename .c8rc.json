@@ -1,0 +1,9 @@
+{
+  "include": [
+    "test/", 
+    "src/"
+  ],
+  "exclude" : [
+    "**/.internal/**"
+  ]
+}
